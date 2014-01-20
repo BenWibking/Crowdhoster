@@ -33,6 +33,7 @@ class CampaignsController < ApplicationController
         return
       end
     elsif params.has_key?(:amount) && params[:amount].to_f >= @campaign.min_payment_amount
+      params[:amount].sub!(',', '')
       @amount = ((params[:amount].to_f)*100).ceil/100.0
       @quantity = 1
 

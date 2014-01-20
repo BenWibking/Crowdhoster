@@ -63,7 +63,7 @@
               <% if reward.visible? %>
                 <li class="reward_option <%= raw('active') unless reward.sold_out? %> <%= ((@reward.id == reward.id) ? raw('selected') : raw('hide')) if @reward %> clearfix" data-id="<%= reward.id %>" data-price="<%= short_price(reward.price) %>">
                   <input class="reward_input" type="radio" name="reward" value="<%= reward.id %>" <%= raw('disabled') if reward.sold_out? %><%= raw('checked="checked"') if @reward && @reward.id == reward.id %>>
-                  <label class="price">$<%= short_price(reward.price) %> +</label>
+                  <label class="price"><%= short_price(reward.price, '$') %> +</label>
                   <div class="reward_description">
                     <p class="title"><%= reward.title %></p>
                     <p class="claimed">
