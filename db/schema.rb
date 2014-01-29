@@ -113,8 +113,8 @@ ActiveRecord::Schema.define(:version => 20140128001609) do
     t.string   "card_expiration_month"
     t.string   "card_expiration_year"
     t.integer  "campaign_id"
-    t.datetime "created_at",                         :null => false
-    t.datetime "updated_at",                         :null => false
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
     t.string   "address_one"
     t.string   "address_two"
     t.string   "city"
@@ -125,9 +125,11 @@ ActiveRecord::Schema.define(:version => 20140128001609) do
     t.integer  "reward_id"
     t.text     "additional_info"
     t.string   "billing_postal_code"
-    t.integer  "client_timestamp",      :limit => 8
-    t.string   "ct_request_id"
-    t.string   "ct_request_error_id"
+    t.integer  "client_timestamp",             :limit => 8
+    t.string   "ct_tokenize_request_id"
+    t.string   "ct_tokenize_request_error_id"
+    t.string   "ct_charge_request_id"
+    t.string   "ct_charge_request_error_id"
   end
 
   create_table "rewards", :force => true do |t|
